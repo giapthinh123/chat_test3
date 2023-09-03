@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="main.js"></script>
+  <script src="jquery.js"></script>
+  <script src="myfirst.js"></script>
+  <script>
+  function myFunction() {
+    const chat = document.getElementById('chat');
+    const node = document.createElement("p");
+    // lấy giá trị từ text box
+    const x = document.getElementById("box_chat").value;
+    node.innerHTML = x;
+    // Append the "li" node to the list:
+    if (x == null || x.length){
+        chat.appendChild(node);
+    }
+    else{
+    }
+/*     chat.appendChild(node); */
+    document.getElementById("box_chat").value=null
+}
+</script>
+</head>
+<body>
+  <div class="khung">
+    <input id="box_chat" type="text" >
+    <input class="gui" onclick="myFunction()" type="button" value="test">
+    <div id="chat">
+    </div>
+  </div>
+  <script>
+    $(function(){
+    $('*').keyup(function(e){
+        if(e.keyCode=='13'){
+          myFunction()
+        }
+    })
+  })
+  
+  </script>
+  </div>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js "></script>
+    <script>
+      var socket = io();
+    </script>
+</body>
+</html>
